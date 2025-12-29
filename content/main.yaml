@@ -1,0 +1,20 @@
+course_code: CS2640
+course_title: Modern Storage Systems
+instructor:
+  name: Juncheng Yang
+  email: juncheng@seas.harvard.edu
+description: This course provides a comprehensive examination of both the hardware and software components of storage systems. Students will delve into the layered architecture of contemporary storage systems—from individual disks and disk arrays to distributed storage systems. With a strong focus on efficiency, performance, and reliability, the course equips students with the skills needed to evaluate, analyze, improve, and design storage systems.
+semester: Spring
+year: 2026
+university: Harvard University
+prerequisites: []
+# objectives: []
+# topics: []
+# grading:
+office_hours: Wednesdays 12:30-2pm or by appointment
+TAs:
+  - name: John Doe
+    email: 
+    office_hours: Fridays 3-5pm
+textbook: N/A
+website: 

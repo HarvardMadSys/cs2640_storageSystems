@@ -1,0 +1,63 @@
+title: "Course Project"
+description: "You will come up with an idea to measure, build, or improve a storage system component, get it approved by the instructor, and implement it over the course of the semester. The project is designed to give you hands-on experience with storage systems and allow you to explore a topic of your interest in depth. This is an individual project that allows the use of AI for both brainstorming and coding assistance. The final deliverables include a short report and a presentation to the class. Your presentation will be peer-evaluated and your report will be evaluated by the instructor and TA. The project is worth 40% of your final grade. "
+
+grading_criteria: "Project grades will be based on the quality of the proposal, implementation, evaluation, final report, and presentation, using the detailed criteria below. The grade primarily reflects the effort and rigor you bring to the project. You will not be assessed on the novelty of the idea or the strength of the results, but on how well you execute the work. Accordingly, a project that does not succeed will not hurt your grade if you clearly demonstrate a solid understanding of why it does not work. Likewise, engineering-focused or measurement-oriented projects can also earn high marks when they show strong engineering execution and sound analytical reasoning."
+
+objectives:
+  - "Apply concepts learned in class to a real-world problem"
+  - "Gain experience with systems programming and performance evaluation"
+  - "Deep dive into a specific area of storage systems"
+  - "Develop skills in technical writing and presentation"
+
+team_policy:
+  description: "Projects can be done individually with no teams allowed. However, students are encouraged to *use AI for coding assistance*, discuss ideas and approaches with peers and instructors." 
+
+milestones:
+  - name: "Project Proposal"
+    due_date: "March 12, 2026"
+    description: "A one-page document (not including references) outlining the problem you will solve, challenges, proposed solution, and evaluation plan. Please document your 75%, 100% and 125% goals. "
+    weight: 20
+
+  - name: "Mid-term Checkpoint"
+    due_date: "April 1, 2026"
+    description: "A one-page document of your progress and challenges. Include preliminary results if available."
+    weight: 20
+
+  - name: "Final Presentation"
+    due_date: "Aug 27, 2026 and Apr 29, 2026"
+    description: "10-minute presentation to the class. Your presentation will be evaluated based on clarity, depth, and ability to answer questions. The evaluation will be based on both peer and instructor feedback. Everyone must attend the presentations and give (anonymous) score and feedbacks to your peers. Half of the score will be based on evaluation of your presentation and half based on your feedbacks to others."
+    weight: 40
+
+  - name: "Final Report & Code"
+    due_date: "May 4, 2026"
+    description: "Comprehensive report (two pages) and complete source code with documentation."
+    # consider asking students to get feedback from AI first
+    weight: 20
+
+deliverables: "Please submit a PR to the course project [GitHub repository](https://github.com/HarvardSys/cs2640_project_2026Spring). Must include README, build instructions and your report."
+
+Example Project:
+  - "Designing and Implementing a File System on Top of an Object Store"
+  - "Designing and Implementing a File System using GitHub as a Backend"
+  - "Designing and Implementing a high-performance and scalable pseudo-file system using real file system and object storage"
+  - "Designing cost-effective storage solutions for a given workload"
+  - "Designing and implementing a learned cache that effectively and efficiently leverages features"
+  - "Designing Global-optimal Data Deduplication and Compression for Parquet Files"
+  - "Understanding How Chatbot Affects Storage Systems Usage Patterns"
+  - "Exploring the Performance Evolution of SSDs Over the Past Decade"
+  # a big change in QLC is FTL mapping and large SLC cache, how do they affect performance?
+  - "Exploring QLC NVMe Performance Characteristics"
+  # many real-world workloads are complex with mixed read/write, random/sequential, large/small requests, small and large bursts, what is the best way to benchmark a storage device? 
+  # - "Realistic Storage Benchmarking"
+  - "Benchmarking and Analyzing the Performance of Flash Caches"
+  - "Implementing a Tool to Collect Workload Traces from MacOS/iOS/Android Devices"
+  - "Collecting and Analyzing Storage Workload Traces from AI Training and Inference Jobs"
+  # what application will benefit from higher bandwidth or lower latency? Where should we head next for better performance?
+  - "Understanding the Benefits of Increasingly Fast NVMe Drives"
+  - "Measuring the Performance Impact of GPU-direct Storage on Data-Intensive Applications"
+  # what is the bottleneck of existing distributed file systems? How to improve them? What about under different network conditions?
+  - "Benchmarking and Analyzing the Performance of Distributed File Systems"
+  - "Understanding the Optimality of SIEVE Cache Eviction Algorithm under IRM Workloads"
+
+  # others
+  # file system aging, multi-cloud application, FUSE, QEMU, GTL, 

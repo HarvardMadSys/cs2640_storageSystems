@@ -1,0 +1,18 @@
+title: Schedule
+
+lectures:
+- number: 1
+  date: January 26, 2026
+  topic: Course overview
+  slides: slides/lecture1.pdf
+  readings: N/A
+  assignments_due: N/A
+
+- number: 2
+  date: January 28, 2026
+  topic: Hard Disk Drives
+  slides: slides/lecture2.pdf
+  readings:
+    - Chapter 3 from Operating Systems: Three Easy Pieces
+    - textbook
+  assignments_due: N/A

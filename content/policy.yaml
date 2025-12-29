@@ -1,0 +1,38 @@
+academic_integrity: 
+  title: "Academic Integrity Policy"
+  description: "All work **submitted** must be your own. Plagiarism, cheating, or any form of academic dishonesty will result in severe penalties, including failure of the course. Offense will be reported to the academic integrity office." 
+
+ai_use_policy:
+  title: "AI Use Policy"
+  description: "The use of AI tools (e.g., ChatGPT, GitHub Copilot) is encouraged. You can use AI tools for brainstorming, coding assistance, language polishing, and problem-solving. However, all submitted work must be your own. You should NEVER use AI to write your project report. You must disclose any use of AI tools in all of your submissions. Creative use of AI tools will receive extra credit."
+
+attendance_policy:
+  title: "Attendance Policy"
+  description: "Attendance is expected at all lectures. Excessive absences may affect your grade. We may take attendance without notification. Using laptop and phones during lectures is discouraged unless for note-taking or class activities."
+
+grading_policy:
+  title: "Grading Policy"
+  description: "Grades are based on assignments, exams, and participation. "
+  breakdown:
+    - Cache competiton: 20%
+    - Midterm Exam: 20%
+    - Project:
+      - Project Proposal: 10%
+      - Midterm Project Report: 10%
+      - Final Project Report: 20%
+    - Presentations: 10%
+    - Participation: 10%
+    - Bonus: up to 10% extra credit for creative use of AI tools and contribution to the course, e.g., constructive feedbacks for the instructor.
+
+late_work_policy:
+  title: "Late Work Policy"
+  description: "Assignments are due at the specified time. Late submissions will be accepted up to 24 hours late with a 10% penalty per day thereafter. Extensions may be granted for valid reasons with prior approval." 
+
+disability_accommodations:
+  title: "Disability Accommodations"
+  description: "Students with disabilities should contact the disability services office for accommodations."
+
+code_of_conduct:
+  title: "Code of Conduct"
+  description: "Respect fellow students, instructors, and course materials. Disruptive behavior will not be tolerated."
+  consequences: "May result in removal from class or further disciplinary action."
