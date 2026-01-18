@@ -1,53 +1,213 @@
+<!doctype html>
+<html lang="en">
 
-Assignments (48%)
-There are four weekly assignments, which will improve both your theoretical understanding and your practical skills. All assignments contain both written questions and programming parts. In office hours, TAs may look at students’ code for assignments 1 and 2, but not for assignments 3 and 4.
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-Credit:
-Assignment 1 (6%): Introduction to word vectors
-Assignment 2 (14%): Neural network foundations, calculating tensor derivatives, dependency parsing
-Assignment 3 (14%): Neural Machine Translation with sequence-to-sequence, attention, and subwords
-Assignment 4 (14%): Self-supervised learning and fine-tuning with Transformers
-Deadlines: All assignments are due on either a Tuesday or a Thursday before class (i.e. before 4:30pm). All deadlines are listed in the schedule.
-Submission: Assignments are submitted via Gradescope. You will be able to access the course Gradescope page on Canvas. If you need to sign up for a Gradescope account, please use your @stanford.edu email address. Further instructions are given in each assignment handout. Do not email us your assignments.
-Late start: If the result gives you a higher grade, we will not use your assignment 1 score, and we will give you an assignment grade based on counting each of assignments 2–4 at 16%.
-Collaboration: Study groups are allowed, but students must understand and complete their own assignments, and hand in one assignment per student. If you worked in a group, please put the names of the members of your study group at the top of your assignment. Please ask if you have any questions about the collaboration policy.
-Honor Code: We expect students to not look at solutions or implementations online. Like all other classes at Stanford, we take the student Honor Code seriously. We sometimes use automated methods to detect overly similar assignment solutions.
-Final Project (49%)
-The Final Project offers you the chance to apply your newly acquired skills towards an in-depth application. Students have two options: the Default Final Project (in which students tackle a predefined task, namely implementing a minimalist version of BERT) or a Custom Final Project (in which students choose their own project involving human language and deep learning). Examples of both can be seen on last year's website. Note: TAs may not look at students' code for either the default or custom final projects.
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-Important information
-Credit: For both default and custom projects, credit for the final project is broken down as follows:
-Project proposal (8%)
-Project milestone (6%)
-Project poster (3%)
-Project report (32%)
-Deadlines: The project proposal, milestone and report are all due at 4:30pm. All deadlines are listed in the schedule.
-Default Final Project: In this project, students implement parts of the BERT architecture and use it to tackle 3 downstream tasks. Similar to previous years, the code is in PyTorch.
-Project advice [lecture slides] [custom project tips]: The Practical Tips for Final Projects lecture provides guidance for choosing and planning your project. To get project advice from staff members, first look at each staff member's areas of expertise on the office hours page. This should help you find a staff member who is knowledgable about your project area.
-Ethics-related questions: For guidance on projects dealing with ethical questions, or ethical questions that arise during your project, please contact Benji Xie (benjixie@stanford.edu) or Regina Wang (reginalw@stanford.edu).
-Practicalities
-Team size: Students may do final projects solo, or in teams of up to 3 people. We strongly recommend you do the final project in a team. Larger teams are expected to do correspondingly larger projects, and you should only form a 3-person team if you are planning to do an ambitious project where every team member will have a significant contribution.
-Contribution: In the final report we ask for a statement of what each team member contributed to the project. Team members will typically get the same grade, but we may differentiate in extreme cases of unequal contribution. You can contact us in confidence in the event of unequal contribution.
-External collaborators: You can work on a project that has external (non CS2640 student) collaborators, but you must make it clear in your final report which parts of the project were your work.
-Sharing projects: You can share a single project between CS2640 and another class, but we expect the project to be accordingly bigger, and you must declare that you are sharing the project in your project proposal.
-Mentors: Every custom project team has a mentor, who gives feedback and advice during the project. Default project teams do not have mentors. A project may have an external (i.e., not course staff) mentor; otherwise, we will assign a CS2640 staff mentor to custom project teams after project proposals.
-Computing resources: All teams will receive credits to use Google Cloud Platform, thanks to a kind donation by Google!
-Using external resources: The following guidelines apply to all projects (though the default project has some more specific rules, details provided in the Honor Code section of the handout):
-You can use any deep learning framework you like (PyTorch, TensorFlow, etc.)
-More generally, you may use any existing code, libraries, etc. and consult any papers, books, online references, etc. for your project. However, you must cite your sources in your writeup and clearly indicate which parts of the project are your contribution and which parts were implemented by others.
-Under no circumstances may you look at another CS2640 group's code, or incorporate their code into your project.
-Participation (3%)
-We appreciate everyone being actively involved in the class! There are several ways of earning participation credit, which is capped at 3%:
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
 
-Attending guest speakers' lectures:
-In the second half of the class, we have two invited speakers. Our guest speakers make a significant effort to come lecture for us, so (both to show our appreciation and to continue attracting interesting speakers) we do not want them lecturing to a largely empty room. As such, we encourage students to attend these virtual lectures live, and participate in Q&A.
-All students get 0.75% per speaker (1.5% total) for either attending the guest lecture in person, or by writing a reaction paragraph if you watched the talk remotely; details will be provided. Students do not need to attend lecture live to write these reaction paragraphs; they may watch asynchronously.
-Completing feedback surveys: We will send out two feedback surveys (mid-quarter and end-of-quarter) to help us understand how the course is going, and how we can improve. Each of the two surveys are worth 0.5%.
-Ed participation: The top ~20 contributors to Ed will get 3%; others will get credit in proportion to the participation of the ~20th person.
-Karma point: Any other act that improves the class, like helping out another student in office hours or writing a useful guide for students on some topic, which a CS2640 TA or instructor notices and deems worthy: 1%
-Late Days
-Each student has 6 late days to use. A late day extends the deadline 24 hours. You can use up to 3 late days per assignment (including all four assignments, project proposal, project milestone and project final report).
-Final project teams can share late days between members. For example, a group of three people must have at least six late days between them to extend the deadline by two days. If any late days are being shared, this must be clearly marked at the beginning of the report, and we will release a form on Ed that teams should fill out..
-Once you have used all 6 late days, the penalty is 1% off the final course grade for each additional late day.
-Regrade Requests
-If you feel you deserved a better grade on an assignment, you may submit a regrade request on Gradescope within 3 days after the grades are released. Your request should briefly summarize why you feel the original grade was unfair. Your TA will reevaluate your assignment as soon as possible, and then issue a decision. If you are still not happy, you can ask for your assignment to be regraded by an instructor.
+  <meta name="description" content="Course Policy" />
+  <meta name="keywords" content="Course" />
+  <meta http-equiv="author" content="Juncheng Yang" />
+
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,600,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    rel="stylesheet">
+
+  <link href="css/main.css" rel="stylesheet">
+
+  <title>Course Policy</title>
+</head>
+
+<body>
+
+  <div class="container d-flex justify-content-center">
+    <nav class="navbar navbar-expand-md sticky-top bg-body-tertiary shadow" style="height: 64px">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">CS2640</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+          aria-controls="navbarScroll" aria-expanded="true" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarScroll">
+          <ul class="navbar-nav">
+            <li class="nav-item nav-justified">
+              <a class="nav-link mx-0 mx-xl-2" href="index.html">Home</a>
+            </li>
+            <li class="nav-item nav-justified">
+              <a class="nav-link mx-0 mx-xl-2" href="project.html">Projects</a>
+            </li>
+            <li class="nav-item nav-justified">
+              <a class="nav-link mx-0 mx-xl-2 active" href="policy.html">Policy</a>
+            </li>
+            <li class="nav-item nav-justified">
+              <a class="nav-link mx-0 mx-xl-2" href="faq.html">FAQ</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <br><br>
+    <br><br>
+  </div>
+
+  <div class="container" style="max-width: 1200px;">
+    <div class="row">
+      <div class="col-12 title">
+        CS2640 Modern Storage Systems
+      </div>
+      <div class="col-12 title2">
+        <h1>Course Policy</h1>
+      </div>
+
+      <div class="col-12 section" id="policy">
+        <div class="subsection">
+          <h2 style="font-weight: bold;">Grading Breakdown:</h2>
+          <ul>
+            <li>Cache Competition: 20%</li>
+            <li>Midterm Exam: 20%</li>
+            <li>Project:
+              <ul>
+                <li>Project Proposal: 10%</li>
+                <li>Midterm Project Report: 10%</li>
+                <li>Final Project Report: 20%</li>
+              </ul>
+            </li>
+            <li>Presentations: 10%</li>
+            <li>Participation: 10%</li>
+            <li>Bonus: up to 10% extra credit for creative use of AI tools and contribution to the course, e.g.,
+              constructive feedbacks for the instructor.</li>
+          </ul>
+        </div>
+        <hr>
+
+        <div class="subsection">
+          <h2 style="font-weight: bold;">Late Days</h2>
+          <p>Assignments are due at the specified time. Late submissions will be accepted up to 48 hours late with a 10%
+            penalty per day thereafter.
+            Extensions may be granted for valid reasons with prior approval. Please contact the instructor or TA for
+            extension requests.
+          </p>
+        </div>
+        <hr>
+
+        <div class="subsection">
+          <h2 style="font-weight: bold;">Regrade Requests</h2>
+          <p>If you feel you deserved a better grade on an assignment, you may send an email to your TA and instructor
+            within 3 days after the grades are released. Your request should briefly summarize why you feel the original
+            grade was unfair. We will reevaluate your assignment as soon as possible, and then issue a decision. Note
+            that any regrade request may also lead to a lower grade if we find other issues with your submission.</p>
+        </div>
+        <hr>
+
+        <div class="subsection">
+          <h2 style="font-weight: bold;">Attending Guest Speakers' Lectures</h2>
+          <p>
+            In the second half of the class, we have two invited speakers. Our guest speakers make a significant effort
+            to come lecture for us, so (both to show our appreciation and to continue attracting interesting speakers)
+            we
+            do not want them lecturing to a largely empty room. As such, we encourage students to attend these lectures
+            live, and participate in Q&A.
+            The guest lectures will account for half of the participation credit.
+          </p>
+        </div>
+        <hr>
+
+        <div class="subsection">
+          <h2 style="font-weight: bold;">Bonus Points</h2>
+          <p>The course offers up to 10% bonus points that can be added to your final score.</p>
+          <ul>
+            <li><strong>Course feedback:</strong> Any constructive feedback and suggestions that improve the class can
+              receive up to 5% bonus points added to your final score. </li>
+            <li><strong>Supporting others:</strong> Helping out another student in office hours or writing a useful
+              guide for students on some topic can receive up to 5% bonus points added to your final score. </li>
+            <li><strong>Creative AI use:</strong> Creative use of AI tools in your coursework can receive bonus points,
+              as detailed in the AI Use Policy below.</li>
+          </ul>
+        </div>
+        <hr>
+
+        <div class="subsection">
+          <h2 style="font-weight: bold;">AI Use Policy</h2>
+          <p>The use of AI tools (e.g., ChatGPT, GitHub Copilot) is <strong>encouraged</strong>. We also provide free
+            coding agent service for all students in this course.
+            We will discuss this during the first class. Please contact the instructor if you missed the class.
+            You can use AI tools for learning new knowledge, brainstorming, coding assistance, language polishing, and
+            problem-solving. However, all submitted work must be your own. You
+            should NEVER use AI to write your project report. <strong>You must disclose any use of AI tools in all of
+              your
+              submissions. Creative use of AI tools will receive extra credit.</strong> Misuse of AI tools, such as
+            submitting AI-generated report as your own work without proper attribution, will be treated as a violation
+            of the
+            academic integrity policy.</p>
+          <p>While we encourage the use of AI tools, we also want to make sure that students are aware of their
+            limitations.
+            AI tools can sometimes produce incorrect or misleading information, so it is important to critically
+            evaluate
+            any content generated by AI. Always double-check facts, code, and references provided by AI tools.</p>
+        </div>
+        <hr>
+
+        <div class="subsection">
+          <h2 style="font-weight: bold;">Attendance Policy and Laptop Use Policy</h2>
+          <p>We highly recommend attending lectures in person to fully benefit from the course.
+            We may take attendance silently without notification to calculate participation score.
+            Laptops and other electronic devices are not forbidden but discouraged during lectures.
+            Please avoid distractions during lectures to maintain a conducive learning environment for everyone.</p>
+        </div>
+        <hr>
+
+        <div class="subsection">
+          <h2 style="font-weight: bold;">Academic Integrity</h2>
+          <p>All work submitted must be your own. Plagiarism, cheating, or any form of academic dishonesty will result
+            in severe penalties, including failure of the course. Offense will be reported to the academic integrity
+            office.</p>
+        </div>
+        <hr>
+
+        <div class="subsection">
+          <h2 style="font-weight: bold;">All Students Welcome</h2>
+          <p>We are committed to doing what we can to work for equity and to create an inclusive learning environment
+            that
+            actively values the diversity of backgrounds, identities, and experiences of everyone in CS2640. We also
+            know
+            that we will sometimes make missteps. If you notice some way that we could do better, we hope that you will
+            let us know about it.</p>
+        </div>
+        <hr>
+
+        <div class="subsection">
+          <h2 style="font-weight: bold;">Auditing the Course</h2>
+          <p>In general we are happy to have auditors if they are a member of the Harvard community (students, visitors,
+            staff, and families).
+            However, please send an email to the instructor in advance to discuss your interest in auditing the course.
+          </p>
+        </div>
+        <hr>
+
+        <div class="subsection">
+          <h2 style="font-weight: bold;">Well-Being and Mental Health</h2>
+          <p>If you are experiencing personal, academic, or relationship problems and would like to talk to someone with
+            training and experience, reach out to the <a href="https://camhs.huhs.harvard.edu/">Counseling and Mental
+              Health Services</a> (CAMHS) on campus. CAMHS is the
+            university's counseling center dedicated to student mental health and wellbeing. Same-day appointment is
+            available.</p>
+        </div>
+
+        <hr>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

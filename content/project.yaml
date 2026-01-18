@@ -50,6 +50,7 @@ Example Project:
   # many real-world workloads are complex with mixed read/write, random/sequential, large/small requests, small and large bursts, what is the best way to benchmark a storage device? 
   # - "Realistic Storage Benchmarking"
   - "Benchmarking and Analyzing the Performance of Flash Caches"
+  - "Benchmark and tune a storage stack end-to-end"
   - "Implementing a Tool to Collect Workload Traces from MacOS/iOS/Android Devices"
   - "Collecting and Analyzing Storage Workload Traces from AI Training and Inference Jobs"
   # what application will benefit from higher bandwidth or lower latency? Where should we head next for better performance?
@@ -61,3 +62,6 @@ Example Project:
 
   # others
   # file system aging, multi-cloud application, FUSE, QEMU, GTL, 
+  
+  
+  

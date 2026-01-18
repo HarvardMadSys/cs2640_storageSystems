@@ -42,7 +42,7 @@ a:hover {
 
 .subsection{
     margin-top: 16px;
-    margin-bottom: 0px;
+    margin-bottom: 32px;
 }
 
 .para-heading {
@@ -78,8 +78,10 @@ h1 {
 
 h2 {
     /* font-family: 'Fira Sans', sans-serif; */
-    font-weight: 400;
+    font-weight: bold;
     font-size: 20px;
+    margin-bottom: 16px;
+    margin-top: 24px;
 }
 
 h3 {
@@ -113,4 +115,36 @@ p {
     bottom: 0;
     width: 100%;
     text-align: center;
+}
+
+/* FAQ List Styling */
+.faq-list {
+    margin-top: 16px;
+}
+
+.faq-item {
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.faq-item h3 {
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 8px;
+    margin-top: 0;
+}
+
+.faq-item p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555;
+    margin-bottom: 0;
 }
