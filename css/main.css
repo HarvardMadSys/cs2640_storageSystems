@@ -113,6 +113,18 @@ p {
     margin-bottom: 10px;
 }
 
+#schedule table th:nth-child(2),
+#schedule table td:nth-child(2) {
+    min-width: 108px;
+    width: 108px;
+}
+
+#schedule table th:nth-child(3),
+#schedule table td:nth-child(3) {
+    min-width: 160px;
+    width: 160px;
+}
+
 .footer {
     /* position: fixed; */
     background-color: white;
