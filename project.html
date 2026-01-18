@@ -45,6 +45,9 @@
               <a class="nav-link mx-0 mx-xl-2" href="index.html">Home</a>
             </li>
             <li class="nav-item nav-justified">
+              <a class="nav-link mx-0 mx-xl-2" href="competition.html">Caching Competition</a>
+            </li>
+            <li class="nav-item nav-justified">
               <a class="nav-link mx-0 mx-xl-2 active" href="project.html">Projects</a>
             </li>
             <li class="nav-item nav-justified">
@@ -73,15 +76,42 @@
       <div class="col-12 section" id="project-overview">
         <h1>Project Overview</h1>
         <p>
-          The course project is an important component of this class, allowing students to apply the concepts
-          learned in lectures to real-world distributed systems problems. Students will work in teams to design,
-          implement, and evaluate a distributed system.
+          You will come up with an idea to measure, build, or improve a storage system component, get it approved
+          by the instructor, and implement it over the course of the semester. The project is designed to give you
+          hands-on experience with storage systems and allow you to explore a topic of your interest in depth. This
+          is an <strong>individual project</strong> that encourages the use of AI for both brainstorming and coding
+          assistance. The
+          final deliverables include a short report and a presentation to the class. Your presentation will be
+          peer-evaluated and your report will be evaluated by the instructor and TA. The project is worth half of
+          your final grade.
         </p>
 
-        <div class="subsection"><strong>Project Weight:</strong> 40% of final grade</div>
-        <div class="subsection"><strong>Team Size:</strong> 2-3 students</div>
-        <div class="subsection"><strong>Duration:</strong> Throughout the semester</div>
+        <div><strong>Objectives:</strong></div>
+        <ul>
+          <li>Apply concepts learned in class to a real-world problem</li>
+          <li>Gain experience with systems programming and performance evaluation</li>
+          <li>Deep dive into a specific area of storage systems</li>
+          <li>Develop skills in technical writing and presentation</li>
+        </ul>
 
+        <div class="subsection"><strong>Team Policy:</strong> Projects must be done individually with no teams
+          allowed. </div>
+
+        <hr>
+      </div>
+
+      <div class="col-12 section" id="grading-criteria">
+        <h1>Grading Criteria</h1>
+        <p>
+          Project grades will be based on the quality of the proposal, implementation, evaluation, final report,
+          and presentation, using the detailed criteria below. The grade primarily reflects the <em>effort</em> and
+          <em>rigor</em> you bring to the project. While novelty is considered in the evaluation, it is not heavily
+          weighted.
+          Accordingly, an idea that does not succeed will not hurt
+          your grade if you demonstrate a solid understanding of why it does not work. Likewise,
+          engineering-focused or measurement-oriented projects can also earn high marks when they show strong
+          execution, sound analytical reasoning and useful insights.
+        </p>
         <hr>
       </div>
 
@@ -91,110 +121,111 @@
           <tr class="table-primary">
             <th>Milestone</th>
             <th>Due Date</th>
-            <th>Weight</th>
-            <th>Deliverables</th>
+            <th>Description</th>
           </tr>
           <tr>
-            <td>Team Formation</td>
-            <td>Week 2</td>
-            <td>-</td>
-            <td>Submit team members via form</td>
+            <td>Proposal</td>
+            <td>March 12, 2026</td>
+            <td>A one-page document (not including references) outlining the problem you will solve, challenges,
+              proposed solution, and evaluation plan. Please document your 75%, 100% and 125% goals.</td>
           </tr>
           <tr>
-            <td>Project Proposal</td>
-            <td>Week 4</td>
-            <td>10%</td>
-            <td>2-page proposal document</td>
+            <td>Midterm Checkpoint</td>
+            <td>April 1, 2026</td>
+            <td>A one-page document on top of your proposal to report your progress and challenges. Include preliminary
+              results if available.</td>
           </tr>
           <tr>
-            <td>Design Document</td>
-            <td>Week 7</td>
-            <td>15%</td>
-            <td>System design and architecture</td>
+            <td>Project Presentation</td>
+            <td>Aug 27, 2026 and Apr 29, 2026</td>
+            <td>An 8-minute (may change) presentation to the class. Your presentation will be evaluated based on
+              clarity, depth,
+              and ability to answer questions. The evaluation will be by both peers and the instructor.
+              Everyone must attend the presentations and give (anonymous) score and feedbacks to your peers.
+              50% of the presentation score are based on your presentation and 50% are based on your feedback to others.
+            </td>
           </tr>
           <tr>
-            <td>Milestone Check-in</td>
-            <td>Week 10</td>
-            <td>10%</td>
-            <td>Progress presentation</td>
-          </tr>
-          <tr>
-            <td>Final Submission</td>
-            <td>Week 14</td>
-            <td>45%</td>
-            <td>Code, report, demo</td>
-          </tr>
-          <tr>
-            <td>Final Presentation</td>
-            <td>Week 15</td>
-            <td>20%</td>
-            <td>15-minute presentation</td>
+            <td>Final Project Report</td>
+            <td>May 4, 2026</td>
+            <td>Comprehensive report (no more than three pages, but can have unlimited appendix) and complete source
+              code with documentation. Please indicate which goal you have achieved. </td>
           </tr>
         </table>
         <hr>
       </div>
 
-      <div class="col-12 section" id="project-ideas">
-        <h1>Project Ideas</h1>
-        <p>Below are some suggested project topics. Students are also welcome to propose their own ideas.</p>
-
-        <p class="para-heading">Distributed Key-Value Store</p>
-        Build a fault-tolerant distributed key-value store with replication and consistency guarantees.
-
-        <p class="para-heading">Distributed File System</p>
-        Implement a distributed file system with support for concurrent access and fault tolerance.
-
-        <p class="para-heading">Consensus Protocol Implementation</p>
-        Implement and evaluate a consensus protocol such as Raft or Paxos.
-
-        <p class="para-heading">Distributed Machine Learning</p>
-        Build a system for distributed training of machine learning models.
-
-        <p class="para-heading">Microservices Architecture</p>
-        Design and implement a microservices-based application with service discovery and load balancing.
-
-        <hr>
-      </div>
-
-      <div class="col-12 section" id="project-requirements">
-        <h1>Requirements</h1>
-
-        <p class="para-heading">Technical Requirements</p>
-        <ul>
-          <li>The system must be distributed across at least 3 nodes</li>
-          <li>Must handle node failures gracefully</li>
-          <li>Must include comprehensive testing</li>
-          <li>Code must be well-documented</li>
-        </ul>
-
-        <p class="para-heading">Report Requirements</p>
-        <ul>
-          <li>System architecture and design decisions</li>
-          <li>Implementation details</li>
-          <li>Evaluation methodology and results</li>
-          <li>Discussion of limitations and future work</li>
-        </ul>
-
-        <p class="para-heading">Presentation Requirements</p>
-        <ul>
-          <li>15-minute presentation with Q&A</li>
-          <li>Live demo of the system</li>
-          <li>All team members must participate</li>
-        </ul>
-
+      <div class="col-12 section" id="deliverables">
+        <h1>Deliverables</h1>
+        <p>
+          Please submit a PR to the course project <a
+            href="https://github.com/HarvardSys/cs2640_project_2026Spring">GitHub repository</a>. Must include
+          README, build instructions and your report.
+        </p>
         <hr>
       </div>
 
       <div class="col-12 section" id="resources">
-        <h1>Resources</h1>
-        <ul>
-          <li><a href="#">Project Proposal Template</a></li>
-          <li><a href="#">Design Document Template</a></li>
-          <li><a href="#">Final Report Template</a></li>
-          <li><a href="#">Presentation Guidelines</a></li>
-        </ul>
+        <h1>Testbed Available</h1>
+        <h2>Cloudlab Access</h2>
+        <p>
+          <a href="https://www.cloudlab.us/">Cloudlab</a> is a flexible and powerful testbed for computer systems
+          research. We will provide Cloudlab access for students.
+          Please go to <a href="https://www.cloudlab.us/getting-started.html">Getting Started with Cloudlab</a> to set
+          up your account and get familiar with the platform.
+          You will join project `cs2640` when registering your account.
+        </p>
+        <p>
+        <h2>Other testbeds</h2>
+        <p>Depends on your project requirements and preferences, we will also provide other testbeds.</p>
         <hr>
       </div>
+
+      <div class="col-12 section" id="deliverables">
+        <h1>AI Resources</h1>
+        <p>
+          Harvard students have access to a variety of AI tools. For example, <a
+            href="https://www.huit.harvard.edu/openai-chatgpt-edu">ChatGPT</a> is available for free via HUIT, Gemini
+          and VSCode Copilot is free via Google and GitHub respectively. You can compare the tools using <a
+            href="https://www.huit.harvard.edu/ai/tools">AI Tool Comparison Table</a>.
+        </p>
+        <p>
+          As part of this course, we also provide <strong>free coding agent access to all students</strong>. Please read
+          <a href="https://doc.freeinference.org/">https://doc.freeinference.org/</a> and
+          register on <a href="https://freeinference.org/">https://freeinference.org/</a> using your Harvard email
+          address.
+          We recommend using KiloCode in VSCode and MiniMax model for best experience.
+        </p>
+        <hr>
+      </div>
+
+
+      <div></div>
+
+      <!-- <div class="col-12 section" id="project-ideas">
+        <h1>Example Project Ideas</h1>
+        <ul>
+          <li>Designing and Implementing a File System on Top of an Object Store</li>
+          <li>Designing and Implementing a File System using GitHub as a Backend</li>
+          <li>Designing and Implementing a high-performance and scalable pseudo-file system using real file system
+            and object storage</li>
+          <li>Designing cost-effective storage solutions for a given workload</li>
+          <li>Designing and implementing a learned cache that effectively and efficiently leverages features</li>
+          <li>Designing Global-optimal Data Deduplication and Compression for Parquet Files</li>
+          <li>Understanding How Chatbot Affects Storage Systems Usage Patterns</li>
+          <li>Exploring the Performance Evolution of SSDs Over the Past Decade</li>
+          <li>Exploring QLC NVMe Performance Characteristics</li>
+          <li>Benchmarking and Analyzing the Performance of Flash Caches</li>
+          <li>Benchmark and tune a storage stack end-to-end</li>
+          <li>Implementing a Tool to Collect Workload Traces from MacOS/iOS/Android Devices</li>
+          <li>Collecting and Analyzing Storage Workload Traces from AI Training and Inference Jobs</li>
+          <li>Understanding the Benefits of Increasingly Fast NVMe Drives</li>
+          <li>Measuring the Performance Impact of GPU-direct Storage on Data-Intensive Applications</li>
+          <li>Benchmarking and Analyzing the Performance of Distributed File Systems</li>
+          <li>Understanding the Optimality of SIEVE Cache Eviction Algorithm under IRM Workloads</li>
+        </ul>
+        <hr>
+      </div> -->
 
     </div>
   </div>

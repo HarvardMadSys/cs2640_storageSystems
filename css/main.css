@@ -45,6 +45,10 @@ a:hover {
     margin-bottom: 32px;
 }
 
+#overview .subsection{
+    margin-bottom: 12px;
+}
+
 .para-heading {
     margin-bottom: 0px;
     margin-top: 24px;
