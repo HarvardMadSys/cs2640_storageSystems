@@ -1,5 +1,6 @@
 body {
     font-family: Optima, Candara, Calibri, Arial, sans-serif;
+    margin-top: 20px;
     /* font-family: 'Tangerine', serif; */
 }
 
@@ -80,7 +81,7 @@ a:hover {
 }
 
 .site-header nav {
-    justify-self: center;
+    justify-self: end;
 }
 
 .site-header .seas-logo-header {
@@ -97,6 +98,10 @@ a:hover {
     height: 64px;
     width: auto;
     margin-bottom: 8px;
+}
+
+.header-spacer {
+    height: 32px;
 }
 
 h1 {
