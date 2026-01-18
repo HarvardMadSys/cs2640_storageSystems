@@ -72,6 +72,33 @@ a:hover {
     font-weight: 400;
 }
 
+.site-header {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    column-gap: 16px;
+}
+
+.site-header nav {
+    justify-self: center;
+}
+
+.site-header .seas-logo-header {
+    justify-self: center;
+}
+
+.seas-logo-nav {
+    height: 32px;
+    width: auto;
+    margin-right: 8px;
+}
+
+.seas-logo-header {
+    height: 64px;
+    width: auto;
+    margin-bottom: 8px;
+}
+
 h1 {
     font-family: 'Fira Sans', sans-serif;
     font-weight: 600;
