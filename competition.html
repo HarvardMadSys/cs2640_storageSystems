@@ -14,7 +14,7 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
 
-  <meta name="description" content="Course Project" />
+  <meta name="description" content="Caching Competition" />
   <meta name="keywords" content="Course" />
   <meta http-equiv="author" content="Juncheng Yang" />
 
@@ -24,7 +24,7 @@
 
   <link href="css/main.css" rel="stylesheet">
 
-  <title>Course Project</title>
+  <title>Caching Competition</title>
 </head>
 
 
@@ -45,10 +45,10 @@
               <a class="nav-link mx-0 mx-xl-2" href="index.html">Home</a>
             </li>
             <li class="nav-item nav-justified">
-              <a class="nav-link mx-0 mx-xl-2" href="competition.html">Caching Competition</a>
+              <a class="nav-link mx-0 mx-xl-2 active" href="competition.html">Caching Competition</a>
             </li>
             <li class="nav-item nav-justified">
-              <a class="nav-link mx-0 mx-xl-2 active" href="project.html">Projects</a>
+              <a class="nav-link mx-0 mx-xl-2" href="project.html">Projects</a>
             </li>
             <li class="nav-item nav-justified">
               <a class="nav-link mx-0 mx-xl-2" href="policy.html">Policy</a>
@@ -73,43 +73,165 @@
         Caching Competition
       </div>
 
-      <div class="col-12 section" id="project-overview">
+      <div class="col-12 section" id="competition-overview">
         <h1>Assignment Overview</h1>
         <p>
           The performance of a storage system is often dictated by its caching strategy. An effective cache will
-          significantly reduce data access latency and improve overall system throughput. 
-          The caching competition is an assignment that is designed to encourage students to learn and explore the
-          design of cache eviction algorithms. Students will implement their own cache eviction algorithms and compete
-          against each other based on the performance of their algorithms on a set of benchmark workloads.
+          significantly reduce data access latency and improve overall system throughput.
+          The caching competition is an assignment designed to encourage students to learn and explore the design of
+          cache eviction algorithms. Students will implement their own cache eviction strategies and compete against
+          each other based on performance on a set of benchmark workloads.
         </p>
 
-
         <div>
-          <h2>Competition Details</h2>
+          <h2>Competition Highlights</h2>
           <ul>
-            <li>
-              <strong>Implementation:</strong> Students will implement their cache eviction algorithms in a provided
-              framework. The framework will handle the basic cache operations, while students will focus on the eviction
-              logic.
-            </li>
-            <li>
-              <strong>Workloads:</strong> A set of benchmark workloads will be provided to evaluate the performance of
-              the cache algorithms. These workloads will simulate real-world access patterns.
-            </li>
-            <li>
-              <strong>Evaluation Metrics:</strong> The performance of each cache algorithm will be evaluated based on
-              metrics such as hit rate, latency, and throughput.
-            </li>
-            <li>
-              <strong>Competition Format:</strong> The competition will be held in multiple rounds, with students
-              submitting their implementations for evaluation after each round. The top-performing algorithms will be
-              recognized at the end of the competition.
-            </li>
+            <li><strong>Submit your algorithm:</strong> Upload your cache eviction implementation or write it directly
+              in the browser. We support C, C++, Python, and more.</li>
+            <li><strong>Research-grade evaluation:</strong> Submissions are evaluated against diverse libCacheSim
+              workloads with transparent performance metrics.</li>
+            <li><strong>Global leaderboard:</strong> Compare your algorithm against state-of-the-art implementations and
+              track your progress.</li>
           </ul>
-
-
         </div>
+        <hr>
       </div>
+
+      <div class="col-12 section" id="how-to-participate">
+        <h1>How to Participate</h1>
+        <ul>
+          <li>Review the libCacheSim plugin guide and examples to learn the expected interface.</li>
+          <li>Implement your eviction algorithm in the provided framework.</li>
+          <li>Submit your implementation on the Cache Competition site for evaluation.</li>
+          <li>Iterate based on results and climb the leaderboard.</li>
+        </ul>
+        <div class="subsection">
+          <a class="btn btn-primary me-2" href="https://cachecompetition.com/login">Get Started</a>
+          <a class="btn btn-outline-secondary" href="https://cachecompetition.com/leaderboard">View Leaderboard</a>
+        </div>
+        <hr>
+      </div>
+
+      <div class="col-12 section" id="example-algorithms">
+        <h1>Example Algorithm Skeletons</h1>
+        <p>Below are minimal FIFO-style examples to illustrate the shape of a cache eviction implementation.</p>
+
+        <details class="code-fold">
+          <summary>C Example (FIFO)</summary>
+          <pre><code class="language-c">#include "cache.h"
+
+typedef struct fifo_node {
+  uint64_t key;
+  struct fifo_node *next;
+} fifo_node_t;
+
+typedef struct {
+  fifo_node_t *head;
+  fifo_node_t *tail;
+} fifo_state_t;
+
+void *cache_init(void) {
+  fifo_state_t *state = calloc(1, sizeof(fifo_state_t));
+  return state;
+}
+
+void cache_record(void *ctx, uint64_t key, uint64_t size) {
+  (void)size;
+  fifo_state_t *state = (fifo_state_t *)ctx;
+  fifo_node_t *node = calloc(1, sizeof(fifo_node_t));
+  node->key = key;
+  if (!state->tail) {
+    state->head = state->tail = node;
+  } else {
+    state->tail->next = node;
+    state->tail = node;
+  }
+}
+
+uint64_t cache_evict(void *ctx) {
+  fifo_state_t *state = (fifo_state_t *)ctx;
+  fifo_node_t *node = state->head;
+  if (!node) {
+    return 0;
+  }
+  state->head = node->next;
+  if (!state->head) {
+    state->tail = NULL;
+  }
+  uint64_t key = node->key;
+  free(node);
+  return key;
+}</code></pre>
+        </details>
+
+        <details class="code-fold">
+          <summary>C++ Example (FIFO)</summary>
+          <pre><code class="language-cpp">#include "cache.hpp"
+#include &lt;deque&gt;
+
+class FifoCache {
+public:
+  void init() {}
+
+  void record(uint64_t key, uint64_t size) {
+    (void)size;
+    queue_.push_back(key);
+  }
+
+  uint64_t evict() {
+    if (queue_.empty()) {
+      return 0;
+    }
+    uint64_t key = queue_.front();
+    queue_.pop_front();
+    return key;
+  }
+
+private:
+  std::deque&lt;uint64_t&gt; queue_;
+};</code></pre>
+        </details>
+
+        <details class="code-fold">
+          <summary>Python Example (FIFO)</summary>
+          <pre><code class="language-python">from collections import deque
+
+class FifoCache:
+    def __init__(self):
+        self.queue = deque()
+
+    def record(self, key, size):
+        _ = size
+        self.queue.append(key)
+
+    def evict(self):
+        if not self.queue:
+            return 0
+        return self.queue.popleft()</code></pre>
+        </details>
+        <p>Adjust the function names and interfaces to match the libCacheSim plugin API.</p>
+        <hr>
+      </div>
+
+      <div class="col-12 section" id="resources">
+        <h1>Resources</h1>
+        <ul>
+          <li><a href="https://cachecompetition.com/">Cache Competition site</a></li>
+          <li><a href="https://cachecompetition.com/leaderboard">Leaderboard</a></li>
+          <li><a href="https://github.com/1a1a11a/libCacheSim">libCacheSim repository</a></li>
+          <li><a href="https://github.com/1a1a11a/libCacheSim/tree/develop/example/plugin_v2">libCacheSim plugin
+              repository</a></li>
+          <li><a href="https://github.com/1a1a11a/py-libCacheSim">py-libCacheSim repository</a></li>
+          <li><a href="https://github.com/1a1a11a/libCacheSim/blob/develop/doc/quickstart_plugin.md">libCacheSim plugin
+              guide</a></li>
+          <li><a href="https://github.com/1a1a11a/libCacheSim/tree/develop/example/plugin_v2">libCacheSim plugin
+              examples</a></li>
+        </ul>
+        <hr>
+      </div>
+
+    </div>
+  </div>
 
 </body>
 
