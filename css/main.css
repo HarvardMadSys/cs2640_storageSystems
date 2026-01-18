@@ -121,7 +121,13 @@ p {
 
 #schedule table th:nth-child(3),
 #schedule table td:nth-child(3) {
-    min-width: 160px;
+    min-width: 200px;
+    width: 200px;
+}
+
+#schedule table th:nth-child(6),
+#schedule table td:nth-child(6) {
+    max-width: 160px;
     width: 160px;
 }
 
