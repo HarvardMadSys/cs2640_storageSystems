@@ -2,165 +2,255 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 
-  <meta name="description" content="Course Project">
-  <meta name="keywords" content="Course">
-  <meta name="author" content="Juncheng Yang">
+    <meta name="description" content="Course Project">
+    <meta name="keywords" content="Course">
+    <meta name="author" content="Juncheng Yang">
 
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
 
-  <link href="css/main.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
 
-  <title>Paper Discussion</title>
+    <title>Paper Discussion</title>
 </head>
 
 <body>
-  <div class="container site-header">
-    <img class="seas-logo-header" src="SEAS Logo_RGB.png" alt="Harvard SEAS logo">
-    <nav class="navbar navbar-expand-md sticky-top bg-body-tertiary shadow" style="height: 64px">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">CS2640</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
-          aria-controls="navbarScroll" aria-expanded="true" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+    <div class="container site-header">
+        <img class="seas-logo-header" src="SEAS Logo_RGB.png" alt="Harvard SEAS logo">
+        <nav class="navbar navbar-expand-md sticky-top bg-body-tertiary shadow" style="height: 64px">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">CS2640</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                    aria-controls="navbarScroll" aria-expanded="true" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-        <div class="collapse navbar-collapse" id="navbarScroll">
-          <ul class="navbar-nav">
-            <li class="nav-item nav-justified">
-              <a class="nav-link mx-0 mx-xl-2" href="index.html">Home</a>
-            </li>
-            <li class="nav-item nav-justified">
-              <a class="nav-link mx-0 mx-xl-2" href="competition.html">Caching Competition</a>
-            </li>
-            <li class="nav-item nav-justified">
-              <a class="nav-link mx-0 mx-xl-2 active" href="project.html">Projects</a>
-            </li>
-            <li class="nav-item nav-justified">
-              <a class="nav-link mx-0 mx-xl-2" href="policy.html">Policy</a>
-            </li>
-            <li class="nav-item nav-justified">
-              <a class="nav-link mx-0 mx-xl-2" href="faq.html">FAQ</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <div class="header-spacer"></div>
-  </div>
+                <div class="collapse navbar-collapse" id="navbarScroll">
+                    <ul class="navbar-nav">
+                        <li class="nav-item nav-justified">
+                            <a class="nav-link mx-0 mx-xl-2" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item nav-justified">
+                            <a class="nav-link mx-0 mx-xl-2" href="competition.html">Caching Competition</a>
+                        </li>
+                        <li class="nav-item nav-justified">
+                            <a class="nav-link mx-0 mx-xl-2" href="project.html">Projects</a>
+                        </li>
+                        <li class="nav-item nav-justified">
+                            <a class="nav-link mx-0 mx-xl-2" href="policy.html">Policy</a>
+                        </li>
+                        <li class="nav-item nav-justified">
+                            <a class="nav-link mx-0 mx-xl-2" href="faq.html">FAQ</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="header-spacer"></div>
+    </div>
 
-  <div class="container" style="max-width: 1200px;">
-    <div class="row">
-      <div class="col-12">
-        <div class="title">CS2640 Modern Storage Systems</div>
-      </div>
-      <div class="col-12 title2">
-        Paper Discussion
-      </div>
+    <div class="container" style="max-width: 1200px;">
+        <div class="row">
+            <div class="col-12">
+                <div class="title">CS2640 Modern Storage Systems</div>
+            </div>
+            <div class="col-12 title2">
+                Paper Discussion
+            </div>
 
-      <div class="col-12 section" id="project-overview">
-        <h2>Paper Discussion Preparations</h2>
-        <p>
-            Half of the this course is paper discussion. Each student is required to present one paper during the semester. 
-            While we do not ask everyone to write a formal report on the paper, <strong>we do expect you to read the paper and think through it carefully.</strong>
-            This applies to everyone in the class, not only the presenter, who will also make a slide to present the paper and lead the discussion.
-        </p>
-        <p>
-            To help you prepare for the presentation, please consider the following questions:
-        </p>
-        <ul>
-          <li>What is the main problem the paper is trying to solve?</li>
-          <li>Why is this problem important?</li>
-          <li>What is the key idea or innovation proposed by the authors?</li>
-          <li>How does the proposed solution compare to previous work?</li>
-          <li>What are the strengths and weaknesses of the paper?</li>
-          <li>Are the experiments and evaluations convincing? Why or why not?</li>
-          <li>What are the potential future directions or open questions raised by the paper?</li>
-        </ul>
-        <p>
-          Reflecting on these questions will help you understand the paper more deeply and prepare you for a
-          thoughtful presentation and discussion.
-        </p>
-            
-        <hr>
-      </div>
+            <div class="col-12 section" id="project-overview">
+                <h2>Paper Discussion Preparations</h2>
+                <p>
+                    Half of the this course is paper discussion. Each student is required to present one paper during
+                    the semester.
+                    While we do not ask everyone to write a formal report on the paper, <strong>we do expect you to read
+                        the paper and think through it carefully.</strong>
+                    This applies to everyone in the class, not only the presenter, who will also make a slide to present
+                    the paper and lead the discussion.
+                </p>
+                <p>
+                    To help you prepare for the presentation, please consider the following questions:
+                </p>
+                <ul>
+                    <li>What is the main problem the paper is trying to solve?</li>
+                    <li>Why is this problem important?</li>
+                    <li>What is the key idea or innovation proposed by the authors?</li>
+                    <li>What is the tradeoff or limitation of the proposed solution?</li>
+                    <li>Are the experiments and evaluations convincing? Why or why not?</li>
+                    <li>How does the proposed solution compare to previous work?</li>
+                    <li>What are the strengths and weaknesses of the paper?</li>
+                    <li>What are the potential future directions or open questions raised by the paper?</li>
+                </ul>
+                <p>
+                    Reflecting on these questions will help you understand the paper more deeply and prepare you for a
+                    thoughtful presentation and discussion.
+                </p>
+                    <hr>
+            </div>
 
 
-      <div class="section" id="discussion-structure">
-        <h2>Class Structure</h2>
-        <p class="lead">Each class we will discuss two papers, and will be structured as follows:</p>
-        
-        <div class="discussion-schedule-inline" role="table" aria-label="Discussion schedule">
-          <div class="schedule-row" role="row">
-            <div class="schedule-cell" role="cell">
-              <time class="duration" datetime="PT4M">5 min</time>
-              <div class="activity">Instructor gives a brief context.</div>
-            </div>
-            <div class="schedule-cell" role="cell">
-              <time class="duration" datetime="PT20M">20 min</time>
-              <div class="activity">First presentation.</div>
-            </div>
-            <div class="schedule-cell" role="cell">
-              <time class="duration" datetime="PT15M">15 min</time>
-              <div class="activity">Open discussion.</div>
-            </div>
-            <div class="schedule-cell" role="cell">
-              <time class="duration" datetime="PT20M">20 min</time>
-              <div class="activity">Second presentation.</div>
-            </div>
-            <div class="schedule-cell" role="cell">
-              <time class="duration" datetime="PT15M">15 min</time>
-              <div class="activity">Open discussion.</div>
-            </div>
-            <!-- <div class="schedule-cell" role="cell">
+            <div class="section" id="discussion-structure">
+                <h2>Class Structure</h2>
+                <p class="lead">Each class we will discuss two papers, and will be structured as follows:</p>
+
+                <div class="discussion-schedule-inline" role="table" aria-label="Discussion schedule">
+                    <div class="schedule-row" role="row">
+                        <div class="schedule-cell" role="cell">
+                            <time class="duration" datetime="PT4M">5 min</time>
+                            <div class="activity">Instructor gives a brief context.</div>
+                        </div>
+                        <div class="schedule-cell" role="cell">
+                            <time class="duration" datetime="PT20M">20 min</time>
+                            <div class="activity">First presentation.</div>
+                        </div>
+                        <div class="schedule-cell" role="cell">
+                            <time class="duration" datetime="PT15M">15 min</time>
+                            <div class="activity">Open discussion.</div>
+                        </div>
+                        <div class="schedule-cell" role="cell">
+                            <time class="duration" datetime="PT20M">20 min</time>
+                            <div class="activity">Second presentation.</div>
+                        </div>
+                        <div class="schedule-cell" role="cell">
+                            <time class="duration" datetime="PT15M">15 min</time>
+                            <div class="activity">Open discussion.</div>
+                        </div>
+                        <!-- <div class="schedule-cell" role="cell">
               <time class="duration" datetime="PT1M">1 min</time>
               <div class="activity">Instructor will wrap up the discussion.</div>
             </div> -->
-          </div>
-        </div>
-        
-        <!-- <div class="total-time" role="contentinfo">
+                    </div>
+                </div>
+
+                <!-- <div class="total-time" role="contentinfo">
           <small class="text-muted">Total class time: <time datetime="PT75M">75 minutes</time></small>
         </div> -->
-      </div>
+            </div>
 
+            <div class="section" id="paper-reading-strategy">
+                <h2>Effective Paper Reading Strategy</h2>
+                <p class="lead">Follow this three-pass approach to efficiently read and understand research papers:</p>
+
+                <div class="reading-passes">
+                    <article class="reading-pass">
+                        <header class="pass-header">
+                            <h3>Pass 1 (10–30 min): Triage and Mental Map</h3>
+                            <div class="pass-goal">Decide whether to invest more time and get the paper's shape.</div>
+                        </header>
+
+                        <div class="pass-content">
+                            <h4>Do:</h4>
+                            <ul>
+                                <li>Read title + abstract, then intro (lightly)</li>
+                                <li>Skim section headings, diagrams, and key math blocks</li>
+                                <li>Read conclusion and quickly scan references</li>
+                            </ul>
+
+                            <h4>Outcome:</h4>
+                            <ul>
+                                <li>Answer: What problem? What contribution? Rough approach?</li>
+                                <li>Decide: stop, bookmark, or continue (not needed for the papers you will read for this class)</li>
+                            </ul>
+
+                            <div class="tip"><strong>💡 Tip:</strong> Prioritize figures/tables—they encode methods and results directly</div>
+                        </div>
+                    </article>
+
+                    <article class="reading-pass">
+                        <header class="pass-header">
+                            <h3>Pass 2 (1–2 hrs): Understand & Evaluate</h3>
+                            <div class="pass-goal">Understand the "how" and "why" without getting stuck in details.</div>
+                        </header>
+
+                        <div class="pass-content">
+                            <h4>Identify:</h4>
+                            <ul>
+                                <li>Problem definition (inputs/outputs, constraints, models)</li>
+                                <li>Key idea (the trick, abstraction)</li>
+                                <li>Method/architecture/algorithm (restate-able level)</li>
+                                <li>Assumptions (explicit and implicit)</li>
+                                <li>Evaluation design (metrics, baselines, datasets, ablations)</li>
+                            </ul>
+                            <h4>Outcome:</h4>
+                            <ul>
+                                <li>Write 5–8 sentence summary + strengths/weaknesses</li>
+                                <li>Know which parts to revisit for reproduction/extension</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="reading-pass">
+                        <header class="pass-header">
+                            <h3>Pass 3 (Deep Dive): Re-derive & Stress-test</h3>
+                            <div class="pass-goal">Be able to use the paper (re-implement, extend, review).</div>
+                        </header>
+
+                        <div class="pass-content">
+                            <h4>Do:</h4>
+                            <ul>
+                                <li>Re-derive key steps; work through proofs/invariants</li>
+                                <li>Check experimental reproducibility</li>
+                                <li>Audit hidden assumptions and edge cases</li>
+                                <li>Compare to relevant prior work</li>
+                            </ul>
+
+                            <h4>Outcome:</h4>
+                            <ul>
+                                <li>Explain what they did, why it works, when it fails, next steps</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="strategy-summary">
+                    <div class="reference-links">
+                        <h4>Additional Resources:</h4>
+                        <ul>
+                            <li><a href="https://web.stanford.edu/class/cs114/reading-keshav.pdf" target="_blank" rel="noopener">How to Read a Paper by S. Keshav</a> - Original three-pass method</li>
+                            <li><a href="https://www.eecs.harvard.edu/~michaelm/postscripts/ReadPaper.pdf" target="_blank" rel="noopener">The Science of Scientific Writing</a> - Writing and reading technical papers</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
-  </div>
 
-  <!-- Default Statcounter code for cs2640
+    <!-- Default Statcounter code for cs2640
   https://moderncomputerstorage.com -->
-  <script type="text/javascript">
-    var sc_project = 13198989;
-    var sc_invisible = 1;
-    var sc_security = "ad16e1a0"; 
-  </script>
-  <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
-  <noscript>
-    <div class="statcounter"><a title="Web Analytics
+    <script type="text/javascript">
+        var sc_project = 13198989;
+        var sc_invisible = 1;
+        var sc_security = "ad16e1a0"; 
+    </script>
+    <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
+    <noscript>
+        <div class="statcounter"><a title="Web Analytics
   Made Easy - Statcounter" href="https://statcounter.com/" target="_blank"><img class="statcounter"
-          src="https://c.statcounter.com/13198989/0/ad16e1a0/1/" alt="Web Analytics Made Easy - Statcounter"
-          referrerPolicy="no-referrer-when-downgrade"></a></div>
-  </noscript>
-  <!-- End of Statcounter Code -->
+                    src="https://c.statcounter.com/13198989/0/ad16e1a0/1/" alt="Web Analytics Made Easy - Statcounter"
+                    referrerPolicy="no-referrer-when-downgrade"></a></div>
+    </noscript>
+    <!-- End of Statcounter Code -->
 </body>
 
 
 <footer>
-  <div class="container site-footer">
-    <hr>
-    <p>Juncheng Yang, Harvard University, 2026</p>
-  </div>
+    <div class="container site-footer">
+        <hr>
+        <p>Juncheng Yang, Harvard University, 2026</p>
+    </div>
 </footer>
 
 </html>
