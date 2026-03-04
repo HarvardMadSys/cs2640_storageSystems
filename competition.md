@@ -44,7 +44,7 @@ Because plugins are completely decoupled from core code you can:
 ## 2. C/C++ Plugin Development
 
 > [!IMPORTANT]
-> Before we start, make sure you have followed [Build and Install libCacheSim](../README.md#build-and-install-libcachesim) to build the core *libCacheSim* library.
+> Before we start, make sure you have followed [Build and Install libCacheSim](https://github.com/1a1a11a/libCacheSim/blob/develop/README.md#build-and-install-libcachesim) to build the core *libCacheSim* library.
 
 ### 2.1 Required Hook Functions
 
@@ -314,7 +314,7 @@ Then simply run this script with `python3`.
 
 ## 4. More Examples
 
-- C/C++: See [example/plugin_v2/](../example/plugin_v2/) for a more comprehensive example.
+- C/C++: See [example/plugin_v2/](https://github.com/1a1a11a/libCacheSim/tree/develop/example/plugin_v2/) for a more comprehensive example.
 - Python: See the [libCacheSim-python](https://github.com/cacheMon/libCacheSim-python/tree/main/examples) repository for more examples.
 
 ---
