@@ -1,3 +1,61 @@
+## 0. Setup
+
+### 0.1 Cloudlab
+
+It is recommended to use [Cloudlab](https://www.cloudlab.us/) for this cache competition. Cloudlab is a flexible and powerful testbed for computer systems research. We will provide Cloudlab access for students. Please go to [Getting Started with Cloudlab](https://docs.cloudlab.us/getting-started.html) to set up your account and get familiar with the platform. You will join project `cs2640` when registering your account.
+
+Note that an SSH public key is required so that you can use SSH to access your Cloudlab nodes, otherwise you are limited to using a shell terminal in the browser. In the sign-up form, there is a link to instructions for generating an SSH key pair if you don't have one already.
+
+After you have signed up and logging in, you can start experiments. In normal circumstances, you can just use the default profile and configurations and click "next" for the first two steps. At the third "Finalize" step, you will need to select *any* cluster available and click "next". At the final "Schedule" step, you can adjust the start time and duration of your experiment (leave start time empty to start immediately).
+
+After the experiment starts, there will be an "SSH command" available under the "List View" tab if you have provided your SSH public key during registration. You can use this command to SSH into your experiment node(s). You have sudo access on the node(s). However, remember that when the experiment ends, all data on the node(s) will be lost. Make sure to sync important data and code to GitHub (or your local machine) regularly (before the experiment ends).
+
+**From now on we will be assuming you are working in an SSH terminal on a Cloudlab node.**
+
+### 0.2 libCacheSim
+
+**libCacheSim** is a high performance library for building cache simulators and running cache simulations. See its repository at: https://github.com/1a1a11a/libCacheSim. For this competition, you will be using the plugin system of *libCacheSim* to implement your cache replacement algorithm.
+
+In order that you don't lose your work and to be able to sync with upstream when there are updates, it is recommended that you fork the *libCacheSim* repository and develop in a branch in your fork. You might use [gh CLI](https://cli.github.com/) to simplify forking, cloning, and git credentials management, but it is not required. The following assumes you will use `gh`, and you can install it via [the following command](https://github.com/cli/cli/blob/trunk/docs/install_linux.md#debian):
+
+```bash
+(type -p wget >/dev/null || (sudo apt update && sudo apt install wget -y)) \
+	&& sudo mkdir -p -m 755 /etc/apt/keyrings \
+	&& out=$(mktemp) && wget -nv -O$out https://cli.github.com/packages/githubcli-archive-keyring.gpg \
+	&& cat $out | sudo tee /etc/apt/keyrings/githubcli-archive-keyring.gpg > /dev/null \
+	&& sudo chmod go+r /etc/apt/keyrings/githubcli-archive-keyring.gpg \
+	&& sudo mkdir -p -m 755 /etc/apt/sources.list.d \
+	&& echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
+	&& sudo apt update \
+	&& sudo apt install gh -y
+```
+
+Sign in to `gh` with your GitHub account. This will properly set up your git credentials so you can push and pull from your fork without entering your username and access token every time:
+
+```bash
+gh auth login  # Follow the prompts; you might need to wait a few seconds after authentication
+```
+
+Now fork the *libCacheSim* repository and check out your development branch `cs2640`:
+
+```bash
+gh repo fork 1a1a11a/libCacheSim --default-branch-only --remote --clone
+cd libCacheSim
+
+# [First time] Create a new branch and push to remote
+git switch -c cs2640
+git push -u origin cs2640
+
+# [Subsequent times] Check out that branch from remote
+git switch cs2640
+```
+
+Then install *libCacheSim* ([instructions](https://github.com/1a1a11a/libCacheSim?tab=readme-ov-file#one-line-install)):
+
+```bash
+cd scripts && bash ./install_dependency.sh && source ~/.bashrc && bash ./install_libcachesim.sh
+```
+
 ## 1. How the Plugin System Works
 
 A series of hook functions defines the behavior of the custom cache during cache hits and misses. In essence, `libCacheSim` maintains a basic cache that tracks whether an object is a hit or miss, whether the cache is full, and provides hooks accordingly. The actual cache management logic—such as deciding which object(s) to evict on a miss—is entirely delegated to the plugin via these hooks.
@@ -39,12 +97,7 @@ Because plugins are completely decoupled from core code you can:
 * write plugins in **C, C++, or Python**, and
 * distribute them independently from *libCacheSim*.
 
----
-
 ## 2. C/C++ Plugin Development
-
-> [!IMPORTANT]
-> Before we start, make sure you have followed [Build and Install libCacheSim](https://github.com/1a1a11a/libCacheSim/blob/develop/README.md#build-and-install-libcachesim) to build the core *libCacheSim* library.
 
 ### 2.1 Required Hook Functions
 
@@ -196,15 +249,16 @@ For more information, check `-?/--help` of `libcachesim`:
 ../../_build/bin/cachesim --help
 ```
 
----
-
 ## 3. Python Plugin Development
 
-> [!IMPORTANT]
-> Before we start, make sure you have installed the Python binding:
-> ```bash
-> pip3 install libcachesim
-> ```
+Before we start, you need to install the Python binding for *libCacheSim*:
+
+```bash
+sudo apt install python3-pip -y
+pip3 install libcachesim
+```
+
+Note that installing the Python binding this way will not depend on the locally installed *libCacheSim*.
 
 ### 3.1 Required Hook Functions
 
@@ -310,16 +364,7 @@ if __name__ == "__main__":
 
 Then simply run this script with `python3`.
 
----
-
-## 4. More Examples
-
-- C/C++: See [example/plugin_v2/](https://github.com/1a1a11a/libCacheSim/tree/develop/example/plugin_v2/) for a more comprehensive example.
-- Python: See the [libCacheSim-python](https://github.com/cacheMon/libCacheSim-python/tree/main/examples) repository for more examples.
-
----
-
-## 5. Troubleshooting
+## 4. Troubleshooting
 
 ### C/C++ Plugin Issues
 
@@ -350,3 +395,12 @@ Then simply run this script with `python3`.
   ```
 
   Because find is not exposed to plugins, any state-update logic that normally happens inside find must instead be implemented inside the relevant hook functions (`cache_hit_hook`, `cache_eviction_hook`, or `cache_miss_hook`) according to your algorithm's needs.
+
+## 5. More Resources
+
+- The [libCacheSim plugin guide](https://github.com/1a1a11a/libCacheSim/blob/develop/doc/quickstart_plugin.md) (largely overlaps with this document)
+- See [example/plugin_v2/](https://github.com/1a1a11a/libCacheSim/tree/develop/example/plugin_v2/) for a more comprehensive C/C++ plugin example
+- See the [libCacheSim-python](https://github.com/cacheMon/libCacheSim-python/tree/main/examples) repository for more Python examples
+
+> [!IMPORTANT]
+> **REMEMBER TO PUSH YOUR CHANGES TO REMOTE REGULARLY TO AVOID DATA LOSS!**
