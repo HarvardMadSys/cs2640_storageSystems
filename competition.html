@@ -14,6 +14,8 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
 
+  <script type="module" src="https://cdn.jsdelivr.net/npm/zero-md@3?register"></script>
+
   <meta name="description" content="Caching Competition">
   <meta name="keywords" content="Course">
   <meta name="author" content="Juncheng Yang">
@@ -94,106 +96,12 @@
         <hr>
       </div>
 
-      <div class="col-12 section" id="example-algorithms">
-        <h1>Example Algorithm Skeletons</h1>
-        <p>Below are minimal FIFO-style examples to illustrate the shape of a cache eviction implementation.</p>
-
-        <details class="code-fold">
-          <summary>C Example (FIFO)</summary>
-          <pre><code class="language-c">#include "cache.h"
-
-typedef struct fifo_node {
-  uint64_t key;
-  struct fifo_node *next;
-} fifo_node_t;
-
-typedef struct {
-  fifo_node_t *head;
-  fifo_node_t *tail;
-} fifo_state_t;
-
-void *cache_init(void) {
-  fifo_state_t *state = calloc(1, sizeof(fifo_state_t));
-  return state;
-}
-
-void cache_record(void *ctx, uint64_t key, uint64_t size) {
-  (void)size;
-  fifo_state_t *state = (fifo_state_t *)ctx;
-  fifo_node_t *node = calloc(1, sizeof(fifo_node_t));
-  node->key = key;
-  if (!state->tail) {
-    state->head = state->tail = node;
-  } else {
-    state->tail->next = node;
-    state->tail = node;
-  }
-}
-
-uint64_t cache_evict(void *ctx) {
-  fifo_state_t *state = (fifo_state_t *)ctx;
-  fifo_node_t *node = state->head;
-  if (!node) {
-    return 0;
-  }
-  state->head = node->next;
-  if (!state->head) {
-    state->tail = NULL;
-  }
-  uint64_t key = node->key;
-  free(node);
-  return key;
-}</code></pre>
-        </details>
-
-        <details class="code-fold">
-          <summary>C++ Example (FIFO)</summary>
-          <pre><code class="language-cpp">#include "cache.hpp"
-#include &lt;deque&gt;
-
-class FifoCache {
-public:
-  void init() {}
-
-  void record(uint64_t key, uint64_t size) {
-    (void)size;
-    queue_.push_back(key);
-  }
-
-  uint64_t evict() {
-    if (queue_.empty()) {
-      return 0;
-    }
-    uint64_t key = queue_.front();
-    queue_.pop_front();
-    return key;
-  }
-
-private:
-  std::deque&lt;uint64_t&gt; queue_;
-};</code></pre>
-        </details>
-
-        <details class="code-fold">
-          <summary>Python Example (FIFO)</summary>
-          <pre><code class="language-python">from collections import deque
-
-class FifoCache:
-    def __init__(self):
-        self.queue = deque()
-
-    def record(self, key, size):
-        _ = size
-        self.queue.append(key)
-
-    def evict(self):
-        if not self.queue:
-            return 0
-        return self.queue.popleft()</code></pre>
-        </details>
-        <p>Adjust the function names and interfaces to match the libCacheSim plugin API.</p>
-        <hr>
-      </div>
+      <zero-md src="competition.md">
+        <template>
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@5/github-markdown-light.css" />
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets@11/styles/github.min.css" />
+        </template>
+      </zero-md>
 
       <div class="col-12 section" id="resources">
         <h1>Resources</h1>
@@ -221,7 +129,7 @@ class FifoCache:
   <script type="text/javascript">
     var sc_project = 13198989;
     var sc_invisible = 1;
-    var sc_security = "ad16e1a0"; 
+    var sc_security = "ad16e1a0";
   </script>
   <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
   <noscript>
