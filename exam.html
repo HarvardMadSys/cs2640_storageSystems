@@ -14,17 +14,16 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
 
-  <script type="module" src="https://cdn.jsdelivr.net/npm/zero-md@3?register"></script>
-
-  <meta name="description" content="Caching Competition">
+  <meta name="description" content="Midterm Exam">
   <meta name="keywords" content="Course">
   <meta name="author" content="Juncheng Yang">
 
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    rel="stylesheet">
 
   <link href="css/main.css" rel="stylesheet">
 
-  <title>Caching Competition</title>
+  <title>Midterm Exam</title>
 </head>
 
 <body>
@@ -43,7 +42,7 @@
               <a class="nav-link mx-0 mx-xl-2" href="index.html">Home</a>
             </li>
             <li class="nav-item nav-justified">
-              <a class="nav-link mx-0 mx-xl-2 active" href="competition.html">Caching Competition</a>
+              <a class="nav-link mx-0 mx-xl-2" href="competition.html">Caching Competition</a>
             </li>
             <li class="nav-item nav-justified">
               <a class="nav-link mx-0 mx-xl-2" href="project.html">Projects</a>
@@ -52,7 +51,7 @@
               <a class="nav-link mx-0 mx-xl-2" href="policy.html">Policy</a>
             </li>
             <li class="nav-item nav-justified">
-              <a class="nav-link mx-0 mx-xl-2" href="exam.html">Exam</a>
+              <a class="nav-link mx-0 mx-xl-2 active" href="exam.html">Exam</a>
             </li>
             <li class="nav-item nav-justified">
               <a class="nav-link mx-0 mx-xl-2" href="faq.html">FAQ</a>
@@ -70,55 +69,82 @@
         <div class="title">CS2640 Modern Storage Systems</div>
       </div>
       <div class="col-12 title2">
-        Caching Competition
+        Midterm Exam
       </div>
 
-      <div class="col-12 section" id="competition-overview">
-        <h1>Assignment Overview</h1>
-        <p>
-          The performance of a storage system is often dictated by its caching strategy. An effective cache will
-          significantly reduce data access latency and improve overall system throughput.
-          The caching competition is an assignment designed to encourage students to learn and explore the design of
-          cache eviction algorithms. Students will implement their own cache eviction strategies and compete against
-          each other based on performance on a set of benchmark workloads.
-        </p>
+      <div class="col-12 section" id="exam-info">
+        <h2>Exam Information</h2>
+        <table class="table table-bordered" style="max-width: 500px;">
+          <tbody>
+            <tr>
+              <td><strong>Date</strong></td>
+              <td>Monday, March 23, 2026</td>
+            </tr>
+            <tr>
+              <td><strong>Time</strong></td>
+              <td>11:15 AM &ndash; 12:30 PM (regular class time)</td>
+            </tr>
+            <tr>
+              <td><strong>Location</strong></td>
+              <td>SEC LL2.223 (regular classroom)</td>
+            </tr>
+            <tr>
+              <td><strong>Format</strong></td>
+              <td>Closed-book, in-person</td>
+            </tr>
+            <tr>
+              <td><strong>Weight</strong></td>
+              <td>20% of final grade</td>
+            </tr>
+          </tbody>
+        </table>
+        <hr>
+      </div>
 
-      <div class="col-12 section" id="how-to-participate">
-        <h1>Get Started</h1>
+      <div class="col-12 section" id="exam-topics">
+        <h2>Topics Covered</h2>
+        <p>The exam covers all lecture material from Weeks 1&ndash;7:</p>
         <ul>
-          <li>Review the libCacheSim plugin guide and examples to learn the expected interface.</li>
-          <li>Implement your eviction algorithm in the provided framework.</li>
-          <li>Submit your implementation on the Cache Competition site for evaluation.</li>
-          <li>Iterate based on results and climb the leaderboard.</li>
+          <li>Hard Disk Drives (HDD): architecture, performance characteristics</li>
+          <li>Solid-State Drives (SSD): NAND flash, FTL, write amplification, wear leveling, garbage collection</li>
+          <li>Block Storage: Linux block layer, I/O schedulers</li>
+          <li>File Systems: FFS, LFS, journaling, VFS, metadata management</li>
+          <li>Distributed Storage Systems: NFS, AFS, GFS, HDFS, object storage, block storage at scale</li>
+          <li>Storage Performance: open vs. closed systems, aging, benchmarking, measurement methodology</li>
+          <li>Caching: five-minute rule, eviction policies, SHARDS, S3-FIFO, SIEVE</li>
+          <li>Storage Reliability &amp; Data Protection: RAID, erasure coding, MTTDL, LRC</li>
         </ul>
-        <div class="subsection">
-          <a class="btn btn-primary me-2" href="https://cachecompetition.com/login" target="_blank">Get Started</a>
-          <a class="btn btn-outline-secondary" href="https://cachecompetition.com/leaderboard" target="_blank">View Leaderboard</a>
-        </div>
+        <hr>
       </div>
 
-      <div class="col-12 section" id="detailed-instructions">
-        <h1>Detailed Instructions</h1>
-        <zero-md src="competition.md">
-          <template>
-            <style>
-              .markdown-body {
-                font-family: Optima, Candara, Calibri, Arial, sans-serif !important;
-              }
-              pre {
-                padding: 0 !important;
-              }
-            </style>
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@5/github-markdown-light.css" />
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets@11/styles/github.min.css" />
-          </template>
-        </zero-md>
-        <br>
-        <br>
+      <div class="col-12 section" id="exam-practice">
+        <h2>Practice Materials</h2>
+        <ul>
+          <li><a href="CS2640_practice.pdf">Practice midterm (PDF)</a></li>
+          <li><a href="CS2640_practice_solution.pdf">Practice midterm solution (PDF)</a></li>
+          <li><a href="https://practice.moderncomputerstorage.com" target="_blank" rel="noopener noreferrer">Online practice exam</a></li>
+        </ul>
+        <hr>
       </div>
+
+      <div class="col-12 section" id="exam-link">
+        <h2>Midterm Exam</h2>
+        <p>The online midterm is available only during the scheduled exam time (March 23, 11:15 AM &ndash; 12:30 PM).</p>
+        <p><a href="https://exam.moderncomputerstorage.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark">Go to Midterm Exam</a></p>
+        <hr>
+      </div>
+
+      <div class="col-12 section" id="exam-policy">
+        <h2>Exam Policies</h2>
+        <ul>
+          <li>The exam is <strong>closed-book</strong> and <strong>closed-notes</strong>. No electronic devices are allowed.</li>
+          <li>You may bring <strong>one double-sided letter-size cheat sheet</strong> (handwritten or typed).</li>
+          <li>If you have a conflict or need accommodations, please contact the instructor <strong>at least one week before</strong> the exam.</li>
+        </ul>
+      </div>
+
     </div>
   </div>
-
 
   <!-- Default Statcounter code for cs2640
   https://moderncomputerstorage.com -->
@@ -136,9 +162,7 @@
   </noscript>
   <!-- End of Statcounter Code -->
 
-
 </body>
-
 <footer class="site-footer">
   <div class="container">
 
