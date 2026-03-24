@@ -509,3 +509,99 @@ p {
         padding: 12px;
     }
 }
+
+/* Policy Page Styling */
+.policy-toc {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 16px;
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+}
+
+.policy-toc a {
+    display: inline-block;
+    padding: 6px 14px;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #495057;
+    transition: all 0.2s ease;
+}
+
+.policy-toc a:hover {
+    background-color: #8C1515;
+    color: white;
+    border-color: #8C1515;
+    text-decoration: none;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(140, 21, 21, 0.3);
+}
+
+.policy-grade-table {
+    max-width: 500px;
+}
+
+.policy-grade-table td:last-child,
+.policy-grade-table th:last-child {
+    text-align: right;
+    width: 100px;
+}
+
+/* Discussion Questions Callout */
+.discussion-questions {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-left: 3px solid #8C1515;
+    border-radius: 6px;
+    padding: 16px 20px;
+    margin: 16px 0;
+}
+
+.discussion-questions h4 {
+    color: #8C1515;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 12px;
+    border: none;
+    padding: 0;
+}
+
+.discussion-questions ul {
+    margin-bottom: 0;
+}
+
+.discussion-questions li {
+    margin-bottom: 6px;
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+/* Rubric Table */
+.rubric-table {
+    font-size: 14px;
+}
+
+.rubric-table td,
+.rubric-table th {
+    vertical-align: top;
+}
+
+.rubric-table td.rubric-weight,
+.rubric-table th.rubric-weight {
+    text-align: center;
+    font-weight: 600;
+    white-space: nowrap;
+    width: 70px;
+}
+
+@media (max-width: 768px) {
+    .rubric-table {
+        font-size: 12px;
+    }
+}

@@ -70,36 +70,37 @@
                 Paper Discussion
             </div>
 
-            <div class="col-12 section" id="project-overview">
+            <div class="col-12 section" id="overview">
                 <h2>Paper Discussion Preparations</h2>
                 <p>
-                    Half of the this course is paper discussion. Each student is required to present one paper during
+                    Half of this course is paper discussion. Each student is required to present one paper during
                     the semester.
                     While we do not ask everyone to write a formal report on the paper, <strong>we do expect you to read
                         the paper and think through it carefully.</strong>
-                    This applies to everyone in the class, not only the presenter, who will also make a slide to present
+                    This applies to everyone in the class, not only the presenter, who will also make slides to present
                     the paper and lead the discussion.
                 </p>
-                <p>
-                    To help you prepare for the presentation, please consider the following questions:
-                </p>
-                <ul>
-                    <li>What is the main problem the paper is trying to solve?</li>
-                    <li>Why is this problem important?</li>
-                    <li>What is the key idea or innovation proposed by the authors?</li>
-                    <li>What is the tradeoff or limitation of the proposed solution?</li>
-                    <li>Are the experiments and evaluations convincing? Why or why not?</li>
-                    <li>How does the proposed solution compare to previous work?</li>
-                    <li>What are the strengths and weaknesses of the paper?</li>
-                    <li>What are the potential future directions or open questions raised by the paper?</li>
-                </ul>
+
+                <div class="discussion-questions">
+                    <h4>Questions to consider when reading each paper:</h4>
+                    <ul>
+                        <li>What is the main problem the paper is trying to solve?</li>
+                        <li>Why is this problem important?</li>
+                        <li>What is the key idea or innovation proposed by the authors?</li>
+                        <li>What is the tradeoff or limitation of the proposed solution?</li>
+                        <li>Are the experiments and evaluations convincing? Why or why not?</li>
+                        <li>How does the proposed solution compare to previous work?</li>
+                        <li>What are the strengths and weaknesses of the paper?</li>
+                        <li>What are the potential future directions or open questions raised by the paper?</li>
+                    </ul>
+                </div>
+
                 <p>
                     Reflecting on these questions will help you understand the paper more deeply and prepare you for a
                     thoughtful presentation and discussion.
                 </p>
-                    <hr>
+                <hr>
             </div>
-
 
             <div class="section" id="discussion-structure">
                 <h2>Class Structure</h2>
@@ -108,7 +109,7 @@
                 <div class="discussion-schedule-inline" role="table" aria-label="Discussion schedule">
                     <div class="schedule-row" role="row">
                         <div class="schedule-cell" role="cell">
-                            <time class="duration" datetime="PT4M">5 min</time>
+                            <time class="duration" datetime="PT5M">5 min</time>
                             <div class="activity">Instructor gives a brief context.</div>
                         </div>
                         <div class="schedule-cell" role="cell">
@@ -127,16 +128,140 @@
                             <time class="duration" datetime="PT15M">15 min</time>
                             <div class="activity">Open discussion.</div>
                         </div>
-                        <!-- <div class="schedule-cell" role="cell">
-              <time class="duration" datetime="PT1M">1 min</time>
-              <div class="activity">Instructor will wrap up the discussion.</div>
-            </div> -->
                     </div>
                 </div>
+            </div>
 
-                <!-- <div class="total-time" role="contentinfo">
-          <small class="text-muted">Total class time: <time datetime="PT75M">75 minutes</time></small>
-        </div> -->
+            <div class="section" id="presenter-guide">
+                <h2>For Presenters</h2>
+                <p class="lead">Your presentation should be ~20 minutes. Here is a suggested slide structure:</p>
+
+                <div class="reading-passes">
+                    <article class="reading-pass">
+                        <header class="pass-header">
+                            <h3>1. Background &amp; Motivation </h3>
+                            <div class="pass-goal">Set the stage so the audience understands why this work matters.</div>
+                        </header>
+                        <div class="pass-content">
+                            <ul>
+                                <li>What is the problem? Why is it hard or important?</li>
+                                <li>What is the state of the art before this paper?</li>
+                                <li>What gap or limitation does this paper address?</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="reading-pass">
+                        <header class="pass-header">
+                            <h3>2. Key Idea &amp; Design </h3>
+                            <div class="pass-goal">Explain the core contribution clearly. Use diagrams.</div>
+                        </header>
+                        <div class="pass-content">
+                            <ul>
+                                <li>What is the key insight or technique?</li>
+                                <li>How does the system/algorithm work? Walk through the architecture or workflow</li>
+                                <li>What are the important design decisions and tradeoffs?</li>
+                            </ul>
+                            <div class="tip"><strong>Tip:</strong> Reuse or redraw the paper's figures rather than describing them in text. A good diagram is worth many slides.</div>
+                        </div>
+                    </article>
+
+                    <article class="reading-pass">
+                        <header class="pass-header">
+                            <h3>3. Evaluation </h3>
+                            <div class="pass-goal">Summarize the key results. Be critical.</div>
+                        </header>
+                        <div class="pass-content">
+                            <ul>
+                                <li>What are the main experiments and baselines?</li>
+                                <li>Highlight 2-3 key results (don't show every graph)</li>
+                                <li>Are the results convincing? What is missing?</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="reading-pass">
+                        <header class="pass-header">
+                            <h3>4. Discussion &amp; Takeaways </h3>
+                            <div class="pass-goal">Wrap up and seed the class discussion.</div>
+                        </header>
+                        <div class="pass-content">
+                            <ul>
+                                <li>Strengths and weaknesses of the paper</li>
+                                <li>Open questions or future directions</li>
+                                <li>Prepare a few discussion questions for the class</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <div class="section" id="rubric">
+                <h2>Presentation Rubric</h2>
+                <p class="lead">Presentations are graded on the following criteria (100 points total).</p>
+
+                <table class="table table-bordered rubric-table">
+                    <thead>
+                        <tr class="table-light">
+                            <th scope="col">Criterion</th>
+                            <th scope="col">Excellent (90-100%)</th>
+                            <th scope="col">Good (75-89%)</th>
+                            <th scope="col">Adequate (60-74%)</th>
+                            <th scope="col">Needs Improvement (&lt;60%)</th>
+                            <th scope="col" class="rubric-weight">Weight</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Content &amp; Understanding</strong></td>
+                            <td>Demonstrates deep understanding of the problem, approach, and contributions; clearly explains technical details</td>
+                            <td>Solid understanding of the paper; minor gaps in technical depth</td>
+                            <td>Covers the main points but misses important details or shows surface-level understanding</td>
+                            <td>Significant misunderstandings or major omissions</td>
+                            <td class="rubric-weight">25%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Slide Quality &amp; Delivery</strong></td>
+                            <td>Well-organized slides with effective figures; clear, confident delivery; good pacing within time limit</td>
+                            <td>Good slides and delivery; minor issues with organization, pacing, or clarity</td>
+                            <td>Slides are text-heavy or disorganized; delivery is unclear or significantly over/under time</td>
+                            <td>Poorly prepared slides; hard to follow; major time issues</td>
+                            <td class="rubric-weight">25%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Critical Analysis</strong></td>
+                            <td>Identifies key strengths and weaknesses; offers thoughtful evaluation of methodology and results</td>
+                            <td>Provides reasonable critique but lacks depth in some areas</td>
+                            <td>Minimal critical analysis; mostly summarizes without evaluating</td>
+                            <td>No critical perspective; pure summary of the paper</td>
+                            <td class="rubric-weight">25%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Discussion Leadership</strong></td>
+                            <td>Prepares thought-provoking questions; engages the class effectively; handles audience questions well</td>
+                            <td>Asks reasonable questions; some audience engagement</td>
+                            <td>Few or superficial discussion questions; limited engagement</td>
+                            <td>No prepared questions; unable to lead discussion</td>
+                            <td class="rubric-weight">25%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section" id="audience-guide">
+                <h2>For the Audience</h2>
+                <p class="lead">Active participation makes the discussion valuable for everyone.</p>
+                <div class="discussion-questions">
+                    <h4>How to participate effectively:</h4>
+                    <ul>
+                        <li><strong>Read the paper before class</strong> &mdash; at least Pass 1 and Pass 2 (see below)</li>
+                        <li><strong>Take notes</strong> &mdash; jot down questions and points of confusion as you read</li>
+                        <li><strong>Ask questions</strong> &mdash; there are no bad questions; if you are confused, others likely are too</li>
+                        <li><strong>Share your perspective</strong> &mdash; relate the paper to your own experience or other work you know</li>
+                        <li><strong>Be constructive</strong> &mdash; critique ideas, not people; suggest improvements, not just problems</li>
+                    </ul>
+                </div>
+                <hr>
             </div>
 
             <div class="section" id="paper-reading-strategy">
