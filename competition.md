@@ -266,16 +266,16 @@ Your Python plugin **must** implement the following callback functions:
 
 | Hook | Prototype | Called When |
 |------|-----------|-------------|
-| `cache_init_hook` | `cache_init_hook(common_cache_params: CommonCacheParams) -> Any` | Once at cache creation. Return an opaque object to maintain plugin state. |
-| `cache_hit_hook` | `cache_hit_hook(data: Any, req: Request) -> None` | A requested object is found in the cache. |
-| `cache_miss_hook` | `cache_miss_hook(data: Any, req: Request) -> None` | A requested object is **not** in the cache *after* insertion. |
-| `cache_eviction_hook` | `cache_eviction_hook(data: Any, req: Request) -> int` | Cache is full – must return the object-ID to evict. |
-| `cache_remove_hook` | `cache_remove_hook(data: Any, obj_id: int) -> None` | An object is explicitly removed (not necessarily due to eviction). |
-| `cache_free_hook` | `cache_free_hook(data: Any) -> None` | Plugin resources can be freed. |
+| `init_hook` | `init_hook(common_cache_params: CommonCacheParams) -> Any` | Once at cache creation. Return an opaque object to maintain plugin state. |
+| `hit_hook` | `hit_hook(data: Any, req: Request) -> None` | A requested object is found in the cache. |
+| `miss_hook` | `miss_hook(data: Any, req: Request) -> None` | A requested object is **not** in the cache *after* insertion. |
+| `eviction_hook` | `eviction_hook(data: Any, req: Request) -> int` | Cache is full – must return the object-ID to evict. |
+| `remove_hook` | `remove_hook(data: Any, obj_id: int) -> None` | An object is explicitly removed (not necessarily due to eviction). |
+| `free_hook` | `free_hook(data: Any) -> None` | Plugin resources can be freed. |
 
 **Notes**
-1. The opaque object returned by `cache_init_hook` is passed back to every other hook via the `data` parameter, letting your plugin maintain arbitrary state (lists, dicts, custom classes, etc). You can replace `Any` with the actual type of your state to get better type hints.
-2. The `cache_free_hook` is optionally but recommended.
+1. The opaque object returned by `init_hook` is passed back to every other hook via the `data` parameter, letting your plugin maintain arbitrary state (lists, dicts, custom classes, etc). You can replace `Any` with the actual type of your state to get better type hints.
+2. The `free_hook` is optional but recommended.
 
 ### 3.2 Minimal Plugin Skeleton (Python)
 
@@ -310,27 +310,27 @@ class FifoCache:
             pass  # Object not in queue
 
 
-def cache_init_hook(common_cache_params: CommonCacheParams):
+def init_hook(common_cache_params: CommonCacheParams):
     return FifoCache(common_cache_params.cache_size)
 
 
-def cache_hit_hook(data: FifoCache, req: Request):
+def hit_hook(data: FifoCache, req: Request):
     data.on_hit(req)
 
 
-def cache_miss_hook(data: FifoCache, req: Request):
+def miss_hook(data: FifoCache, req: Request):
     data.on_miss(req)
 
 
-def cache_eviction_hook(data: FifoCache, req: Request):
+def eviction_hook(data: FifoCache, req: Request):
     return data.evict(req)
 
 
-def cache_remove_hook(data: FifoCache, obj_id: int):
+def remove_hook(data: FifoCache, obj_id: int):
     data.on_remove(obj_id)
 
 
-def cache_free_hook(data: FifoCache):
+def free_hook(data: FifoCache):
     data.queue.clear()
 ```
 
@@ -345,12 +345,12 @@ if __name__ == "__main__":
 
     plugin_fifo_cache = PluginCache(
         cache_size=1024 * 1024,  # 1 MB
-        cache_init_hook=cache_init_hook,
-        cache_hit_hook=cache_hit_hook,
-        cache_miss_hook=cache_miss_hook,
-        cache_eviction_hook=cache_eviction_hook,
-        cache_remove_hook=cache_remove_hook,
-        cache_free_hook=cache_free_hook,
+        cache_init_hook=init_hook,
+        cache_hit_hook=hit_hook,
+        cache_miss_hook=miss_hook,
+        cache_eviction_hook=eviction_hook,
+        cache_remove_hook=remove_hook,
+        cache_free_hook=free_hook,
         cache_name="fifo",
     )
 
@@ -375,6 +375,7 @@ Then simply run this script with `python3`.
 
 ### Python Plugin Issues
 
+* **Missing hooks?** In actual submission, make sure the function names exactly match the prototypes above. In particular, unlike the C/C++ version, they should be named `*_hook` rather than `cache_*_hook`.
 * **Performance Issues**: Use `process_trace()` for large workloads instead of individual `get()` calls for better performance.
 * **Memory Usage**: Monitor cache statistics (`cache.get_occupied_byte()`) and ensure proper cache size limits for your system.
 * **Custom Cache Issues**: Validate your custom implementation against built-in algorithms using test functions.
