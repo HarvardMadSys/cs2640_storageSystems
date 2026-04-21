@@ -192,12 +192,69 @@
         <h1>Deliverables</h1>
         <p>
           Please submit a PR to the course project <a
-            href="https://github.com/HarvardSys/cs2640_project_2026Spring">GitHub repository</a>. Must include
-          README, build instructions and your report in your own folder.
+            href="https://github.com/HarvardMadSys/cs2640_project_2026Spring" target="_blank" rel="noopener">GitHub repository</a>. Your PR must include
+          a README, build instructions, and your report, all placed in your own folder.
           <strong>Please keep your Git history</strong> when creating the PR by rebasing onto the main branch.
-          You can also need to add a title, author, and abstract to the top-level README.
-
+          You also need to add a title, author, and abstract entry for your project to the top-level README.
         </p>
+
+        <h2>How to submit</h2>
+        <ol>
+          <li>
+            Fork <a href="https://github.com/HarvardMadSys/cs2640_project_2026Spring" target="_blank" rel="noopener">HarvardMadSys/cs2640_project_2026Spring</a> to your own GitHub account via the <em>Fork</em> button on GitHub.
+          </li>
+          <li>
+            Clone your fork and add the course repo as an <code>upstream</code> remote:
+<pre><code>git clone git@github.com:&lt;your-username&gt;/cs2640_project_2026Spring.git
+cd cs2640_project_2026Spring
+git remote add upstream https://github.com/HarvardMadSys/cs2640_project_2026Spring.git
+git fetch upstream</code></pre>
+          </li>
+          <li>
+            Create a branch for your project (use your GitHub username or project short name):
+<pre><code>git checkout -b &lt;your-username&gt;</code></pre>
+          </li>
+          <li>
+            Create a folder named after your GitHub username at the repo root and place all your files there:
+            <ul>
+              <li><code>&lt;your-username&gt;/README.md</code> — project overview and build/run instructions</li>
+              <li><code>&lt;your-username&gt;/report.pdf</code> — compiled USENIX-format report (see <a href="#formatting">Report Formatting</a>)</li>
+              <li><code>&lt;your-username&gt;/report/</code> — LaTeX / Word source of the report</li>
+              <li><code>&lt;your-username&gt;/src/</code> — source code (or link to a separate repo if large)</li>
+              <li><code>&lt;your-username&gt;/ai-usage.md</code> — AI usage report (final submission only)</li>
+            </ul>
+          </li>
+          <li>
+            Add a one-line entry for your project to the top-level <code>README.md</code> with your title, author, and a short abstract linking to your folder.
+          </li>
+          <li>
+            Commit your changes with meaningful messages. <strong>Do not squash your history</strong> — we want to see your progress over the semester.
+<pre><code>git add &lt;your-username&gt;/ README.md
+git commit -m "proposal: &lt;your project title&gt;"
+git push origin &lt;your-username&gt;</code></pre>
+          </li>
+          <li>
+            Before opening the PR, rebase onto the latest <code>upstream/main</code> to keep history clean:
+<pre><code>git fetch upstream
+git rebase upstream/main
+git push --force-with-lease origin &lt;your-username&gt;</code></pre>
+          </li>
+          <li>
+            Open a pull request from <code>&lt;your-username&gt;/&lt;branch&gt;</code> into <code>HarvardMadSys/cs2640_project_2026Spring:main</code>. Use your project title as the PR title and paste your abstract into the PR description.
+          </li>
+          <li>
+            For each milestone (proposal, midterm checkpoint, final report), push new commits to the same branch — the PR will update automatically. Tag the instructor/TA in a PR comment when a milestone is ready for review.
+          </li>
+        </ol>
+
+        <p>
+          <strong>Notes:</strong>
+        </p>
+        <ul>
+          <li>Do not modify other students' folders.</li>
+          <li>Keep large datasets and binaries out of the repo; link to external storage instead.</li>
+          <li>If your code lives in a separate repo, include a submodule or a clear link in your folder's README.</li>
+        </ul>
         <hr>
       </div>
 
